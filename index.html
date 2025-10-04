@@ -11,10 +11,17 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
+
+      /* ✅ Set background image */
+      background-image: url('background.png');
+      background-size: cover;       /* ensures the image fills the screen */
+      background-position: center;  /* keeps it centered */
+      background-repeat: no-repeat; /* prevents tiling */
+      background-attachment: fixed; /* makes it stay in place when scrolling */
     }
+
     .container {
-      background: #fff;
+      background: rgba(255, 255, 255, 0.9); /* slight transparency to see background */
       padding: 30px;
       border-radius: 16px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.2);
@@ -23,11 +30,13 @@
       max-height: 90vh;
       overflow-y: auto;
     }
+
     h1 {
       margin-bottom: 20px;
       font-size: 22px;
       color: #333;
     }
+
     input {
       width: 70%;
       padding: 10px;
@@ -36,6 +45,7 @@
       font-size: 16px;
       outline: none;
     }
+
     button {
       padding: 10px 15px;
       border: none;
@@ -46,13 +56,16 @@
       cursor: pointer;
       transition: 0.3s;
     }
+
     button:hover {
       background: #00c6ff;
     }
+
     .results {
       margin-top: 20px;
       text-align: left;
     }
+
     .section-title {
       font-size: 18px;
       margin: 15px 0 10px;
@@ -60,6 +73,7 @@
       padding-bottom: 5px;
       color: #444;
     }
+
     .translation, .definition {
       background: #f9f9f9;
       padding: 10px;
@@ -67,10 +81,12 @@
       margin-bottom: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
+
     .translation {
       display: flex;
       align-items: center;
     }
+
     .translation img {
       width: 28px;
       height: 20px;
@@ -78,9 +94,11 @@
       border-radius: 3px;
       object-fit: cover;
     }
+
     .translation b {
       margin-right: 5px;
     }
+
     /* Loader */
     .loader {
       border: 4px solid #f3f3f3;
@@ -91,10 +109,12 @@
       animation: spin 1s linear infinite;
       margin: 20px auto;
     }
+
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
     .loading-text {
       text-align: center;
       color: #555;
@@ -105,7 +125,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>📖 Dictionary + 🌍 Translator</h1>
+    <h1>📖 eDiksyonaryo Mo</h1>
     <input type="text" id="wordInput" placeholder="Enter a word..." />
     <button onclick="lookupWord()">Search</button>
     <div class="results" id="results"></div>
